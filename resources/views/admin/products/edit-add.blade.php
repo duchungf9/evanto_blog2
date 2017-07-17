@@ -111,10 +111,10 @@
                             </div>
                         </div>
                         @include('voyager::multilingual.input-hidden', [
-                            '_field_name'  => 'body',
-                            '_field_trans' => 'body'
+                            '_field_name'  => 'content_introduce',
+                            '_field_trans' => 'content_introduce'
                         ])
-                        <textarea class="form-control richTextBox" id="richtextbody" name="body" style="border:0px;">@if(isset($dataTypeContent->body)){{ $dataTypeContent->body }}@endif</textarea>
+                        <textarea class="form-control richTextBox" id="content_introduce" name="content_introduce" style="border:0px;">@if(isset($dataTypeContent->content_introduce)){{ $dataTypeContent->content_introduce }}@endif</textarea>
                     </div><!-- .panel -->
 
                     <!-- ### EXCERPT ### -->
@@ -144,6 +144,20 @@
                             </div>
                         </div>
                         <div class="panel-body">
+
+                            <div class="form-group">
+                                <label for="name">Prize</label>
+                                @include('voyager::multilingual.input-hidden', [
+                                    '_field_name'  => 'cost',
+                                    '_field_trans' => 'cost'
+                                ])
+                                <input type="text" class="form-control" id="cost" name="cost"
+                                       placeholder="cost"
+                                       {{!! isFieldSlugAutoGenerator($dataType, $dataTypeContent, "cost") !!}}
+                                       value="@if(isset($dataTypeContent->cost)){{ $dataTypeContent->cost }}@endif">
+                            </div>
+
+
                             <div class="form-group">
                                 <label for="name">URL slug</label>
                                 @include('voyager::multilingual.input-hidden', [
