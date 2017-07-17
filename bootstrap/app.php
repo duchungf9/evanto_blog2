@@ -10,7 +10,55 @@
 | the IoC container for the system binding all of the various parts.
 |
 */
+$_ENV['DOMAIN_CURRENT'] = isset($_SERVER['HTTP_HOST']) ? $_SERVER['HTTP_HOST'] : '';
+$_ENV['CAUHINH'] = [
+    [
+        'domain'=>'kenhgosu.com',
+        'name'=>'nuockhoang365',
+        'db_user'=>'root',
+        'db_name'=>'my_blog2',
+        'db_password'=>'',
+        'db_host'=>'localhost'
+    ],
+    [
+        'domain'=>'evanto.com.vn',
+        'name'=>'cms',
+        'db_user'=>'root',
+        'db_name'=>'myblog',
+        'db_password'=>'hungdaica',
+        'db_host'=>'139.59.250.144'
+    ],
 
+    [
+        'domain'=>'nuockhoang365.com',
+        'name'=>'nuockhoang365',
+        'db_user'=>'root',
+        'db_name'=>'myblog',
+        'db_password'=>'hungdaica',
+        'db_host'=>'139.59.250.144'
+    ],
+    [
+        'domain'=>'http://139.59.250.144',
+        'name'=>'nuockhoang365',
+        'db_user'=>'root',
+        'db_name'=>'myblog',
+        'db_password'=>'hungdaica',
+        'db_host'=>'139.59.250.144'
+    ]
+];
+$sDomain =  $_SERVER['SERVER_NAME'];
+$key = array_search($sDomain, array_column($_ENV['CAUHINH'], 'domain'));
+$_ENV['PROJECT_NAME'] = 'cms';
+if($key>=0){
+    $_ENV['PROJECT_NAME'] = $_ENV['CAUHINH'][$key]['name'];
+    $_ENV['DB_USER'] = $_ENV['CAUHINH'][$key]['db_user'];
+    $_ENV['DB_NAME'] = $_ENV['CAUHINH'][$key]['db_name'];
+    $_ENV['DB_PASSWORD'] = $_ENV['CAUHINH'][$key]['db_password'];
+    $_ENV['DB_HOST'] = $_ENV['CAUHINH'][$key]['db_host'];
+}
+
+
+define('VIEW_FRONT', 'frontend.'.$_ENV['PROJECT_NAME'].'.');
 $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
 );
@@ -30,12 +78,12 @@ $app->singleton(
     Illuminate\Contracts\Http\Kernel::class,
     App\Http\Kernel::class
 );
-
+//
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
     App\Console\Kernel::class
 );
-
+//
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
     App\Exceptions\Handler::class

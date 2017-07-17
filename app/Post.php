@@ -2,14 +2,18 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use TCG\Voyager\Models;
-use TCG\Voyager\Voyager;
 use Illuminate\Support\Facades\Auth;
+use TCG\Voyager\Facades\Voyager;
+use TCG\Voyager\Traits\Translatable;
 
-class Product extends Model
+class Post extends Model
 {
-    //
+    use Translatable;
+
+    protected $translatable = ['title', 'seo_title', 'excerpt', 'body', 'slug', 'meta_description', 'meta_keywords'];
+
     const PUBLISHED = 'PUBLISHED';
 
     protected $guarded = [];
@@ -46,7 +50,7 @@ class Product extends Model
      */
     public function category()
     {
-        return $this->hasOne('App\Category', 'id', 'category_id');
+        return $this->hasOne(Voyager::modelClass('Category'), 'id', 'category_id');
     }
 
     /**

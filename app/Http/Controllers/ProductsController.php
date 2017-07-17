@@ -143,11 +143,7 @@ class ProductsController extends Controller
         // Check if BREAD is Translatable
         $isModelTranslatable = is_bread_translatable($dataTypeContent);
 
-        $view = 'voyager::bread.edit-add';
-
-        if (view()->exists("voyager::$slug.edit-add")) {
-            $view = "voyager::$slug.edit-add";
-        }
+        $view = 'admin.products.edit-add';
 
         return view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
     }
