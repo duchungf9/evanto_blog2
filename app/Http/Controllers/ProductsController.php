@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use TCG\Voyager\Facades\Voyager;
-use TCG\Voyager\Http\Controllers\Controller;
+use App\Http\Controllers\Voyager\Controller;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 
 class ProductsController extends Controller
@@ -169,8 +170,7 @@ class ProductsController extends Controller
         }
 
         if (!$request->ajax()) {
-            $data = call_user_func([$dataType->model_name, 'findOrFail'], $id);
-
+            $data = Product::findOrFail($id);
             $this->insertUpdateData($request, $slug, $dataType->editRows, $data);
 
             return redirect()
