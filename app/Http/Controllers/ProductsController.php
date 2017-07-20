@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 use TCG\Voyager\Facades\Voyager;
 use App\Http\Controllers\Voyager\Controller;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;

@@ -127,10 +127,10 @@
                         </div>
                         <div class="panel-body">
                             @include('voyager::multilingual.input-hidden', [
-                                '_field_name'  => 'excerpt',
-                                '_field_trans' =>'excerpt'
+                                '_field_name'  => 'description',
+                                '_field_trans' =>'description'
                             ])
-                            <textarea class="form-control" name="excerpt">@if (isset($dataTypeContent->excerpt)){{ $dataTypeContent->excerpt }}@endif</textarea>
+                            <textarea class="form-control" name="description">@if (isset($dataTypeContent->description)){{ $dataTypeContent->description }}@endif</textarea>
                         </div>
                     </div>
                 </div>
@@ -151,7 +151,7 @@
                                     '_field_name'  => 'cost',
                                     '_field_trans' => 'cost'
                                 ])
-                                <input type="text" class="form-control" id="cost" name="cost"
+                                <input type="number" class="form-control" id="cost" name="cost"
                                        placeholder="cost"
                                        {{!! isFieldSlugAutoGenerator($dataType, $dataTypeContent, "cost") !!}}
                                        value="@if(isset($dataTypeContent->cost)){{ $dataTypeContent->cost }}@endif">
