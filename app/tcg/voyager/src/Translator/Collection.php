@@ -1,6 +1,6 @@
 <?php
 
-namespace App\TCG\Voyager\Translator;
+namespace App\TCG\Voyager\Src\Translator;
 
 use Illuminate\Support\Collection as IlluminateCollection;
 

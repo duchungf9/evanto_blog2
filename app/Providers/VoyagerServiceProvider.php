@@ -19,7 +19,8 @@ use App\TCG\Voyager\Src\Facades\Voyager as VoyagerFacade;
 use App\TCG\Voyager\FormFields\After\DescriptionHandler;
 use App\TCG\Voyager\Src\Http\Middleware\VoyagerAdminMiddleware;
 use App\TCG\Voyager\Src\Models\User;
-use App\TCG\Voyager\Translator\Collection as TranslatorCollection;
+use App\TCG\Voyager\Src\Translator\Collection as TranslatorCollection;
+use App\TCG\Voyager\Src\Alert;
 
 class VoyagerServiceProvider extends ServiceProvider
 {
@@ -56,6 +57,7 @@ class VoyagerServiceProvider extends ServiceProvider
         $this->registerViewComposers();
 
         $event->listen('voyager.alerts.collecting', function () {
+
             $this->addStorageSymlinkAlert();
         });
 
@@ -70,6 +72,7 @@ class VoyagerServiceProvider extends ServiceProvider
     public function register()
     {
         //
+
         $this->app->register(ImageServiceProvider::class);
         $this->app->register(WidgetServiceProvider::class);
 
@@ -79,7 +82,6 @@ class VoyagerServiceProvider extends ServiceProvider
         $this->app->singleton('voyager', function () {
             return new \App\TCG\Voyager\Src\Voyager();
         });
-
         $this->loadHelpers();
 
         $this->registerAlertComponents();
@@ -102,7 +104,7 @@ class VoyagerServiceProvider extends ServiceProvider
      */
     protected function loadHelpers()
     {
-        foreach (glob(__DIR__.'/Helpers/*.php') as $filename) {
+        foreach (glob(app_path().'/tcg/voyager/src/Helpers/*.php') as $filename) {
             require_once $filename;
         }
     }
@@ -113,7 +115,7 @@ class VoyagerServiceProvider extends ServiceProvider
     protected function registerViewComposers()
     {
         // Register alerts
-        View::composer('voyager::*', function ($view) {
+        View::composer('*', function ($view) {
             $view->with('alerts', VoyagerFacade::alerts());
         });
     }
@@ -129,7 +131,6 @@ class VoyagerServiceProvider extends ServiceProvider
             $currentRouteAction = null;
         }
         $routeName = is_array($currentRouteAction) ? array_get($currentRouteAction, 'as') : null;
-
         if ($routeName != 'voyager.dashboard') {
             return;
         }
@@ -141,7 +142,6 @@ class VoyagerServiceProvider extends ServiceProvider
                 ->title('Missing storage symlink')
                 ->text('We could not find a storage symlink. This could cause problems with loading media files from the browser.')
                 ->button('Fix it', '?fix-missing-storage-symlink=1');
-
             VoyagerFacade::addAlert($alert);
         }
     }

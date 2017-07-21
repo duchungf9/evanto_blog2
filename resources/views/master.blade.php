@@ -81,8 +81,8 @@ if ((substr(Auth::user()->avatar, 0, 7) == 'http://') || (substr(Auth::user()->a
 <div class="app-container">
     <div class="fadetoblack visible-xs"></div>
     <div class="row content-container">
-        @include('voyager::dashboard.navbar')
-        @include('voyager::dashboard.sidebar')
+        @include('dashboard.navbar')
+        @include('dashboard.sidebar')
         <!-- Main Content -->
         <div class="container-fluid">
             <div class="side-body padding-top">
@@ -92,7 +92,7 @@ if ((substr(Auth::user()->avatar, 0, 7) == 'http://') || (substr(Auth::user()->a
         </div>
     </div>
 </div>
-@include('voyager::partials.app-footer')
+@include('partials.app-footer')
 <script>
     (function(){
             var appContainer = document.querySelector('.app-container'),

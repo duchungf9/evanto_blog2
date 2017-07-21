@@ -29,7 +29,6 @@ class VoyagerServiceProvider extends ServiceProvider
 
         $loader = AliasLoader::getInstance();
         $loader->alias('Voyager', VoyagerFacade::class);
-
         $this->app->singleton('voyager', function () {
             return new Voyager();
         });
@@ -96,7 +95,7 @@ class VoyagerServiceProvider extends ServiceProvider
      */
     protected function loadHelpers()
     {
-        foreach (glob(__DIR__.'/Helpers/*.php') as $filename) {
+        foreach (glob(app_path().'/tcg/src/Helpers/*.php') as $filename) {
             require_once $filename;
         }
     }

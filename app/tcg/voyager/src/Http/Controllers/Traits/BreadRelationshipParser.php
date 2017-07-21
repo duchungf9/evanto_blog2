@@ -1,6 +1,6 @@
 <?php
 
-namespace App\TCG\Voyager\Http\Controllers\Traits;
+namespace App\TCG\Voyager\Src\Http\Controllers\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Pagination\LengthAwarePaginator;

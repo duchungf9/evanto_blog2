@@ -1,4 +1,4 @@
-@extends('voyager::master')
+@extends('master')
 
 @section('page_title','All '.$dataType->display_name_plural)
 
@@ -11,12 +11,12 @@
             </a>
         @endif
     </h1>
-    @include('voyager::multilingual.language-selector')
+    @include('multilingual.language-selector')
 @stop
 
 @section('content')
     <div class="page-content container-fluid">
-        @include('voyager::alerts')
+        @include('alerts')
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-bordered">
@@ -80,19 +80,19 @@
                                                 {{ $data->{$row->field} }}
                                                 @endif
                                             @elseif($row->type == 'text')
-                                                @include('voyager::multilingual.input-hidden-bread-browse')
+                                                @include('multilingual.input-hidden-bread-browse')
                                                 <div class="readmore">{{ strlen( $data->{$row->field} ) > 200 ? substr($data->{$row->field}, 0, 200) . ' ...' : $data->{$row->field} }}</div>
                                             @elseif($row->type == 'text_area')
-                                                @include('voyager::multilingual.input-hidden-bread-browse')
+                                                @include('multilingual.input-hidden-bread-browse')
                                                 <div class="readmore">{{ strlen( $data->{$row->field} ) > 200 ? substr($data->{$row->field}, 0, 200) . ' ...' : $data->{$row->field} }}</div>
                                             @elseif($row->type == 'file' && !empty($data->{$row->field}) )
-                                                @include('voyager::multilingual.input-hidden-bread-browse')
+                                                @include('multilingual.input-hidden-bread-browse')
                                                 <a href="/storage/{{ $data->{$row->field} }}">Download</a>
                                             @elseif($row->type == 'rich_text_box')
-                                                @include('voyager::multilingual.input-hidden-bread-browse')
+                                                @include('multilingual.input-hidden-bread-browse')
                                                 <div class="readmore">{{ strlen( strip_tags($data->{$row->field}, '<b><i><u>') ) > 200 ? substr(strip_tags($data->{$row->field}, '<b><i><u>'), 0, 200) . ' ...' : strip_tags($data->{$row->field}, '<b><i><u>') }}</div>
                                             @else
-                                                @include('voyager::multilingual.input-hidden-bread-browse')
+                                                @include('multilingual.input-hidden-bread-browse')
                                                 <span>{{ $data->{$row->field} }}</span>
                                             @endif
                                         </td>

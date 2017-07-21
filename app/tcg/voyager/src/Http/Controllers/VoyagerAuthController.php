@@ -1,7 +1,8 @@
 <?php
 
-namespace App\TCG\Voyager\Http\Controllers;
+namespace App\TCG\Voyager\Src\Http\Controllers;
 
+use App\TCG\Voyager\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
@@ -11,7 +12,7 @@ class VoyagerAuthController extends Controller
 
     public function login()
     {
-        return view('voyager::login');
+        return view('login');
     }
 
     public function postLogin(Request $request)

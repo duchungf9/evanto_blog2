@@ -91,8 +91,8 @@
 
 @endsection
 
-@include('voyager::tools.database.vue-components.database-column')
-@include('voyager::tools.database.vue-components.database-table-helper-buttons')
+@include('tools.database.vue-components.database-column')
+@include('tools.database.vue-components.database-table-helper-buttons')
 
 <script>
     Vue.component('database-table-editor', {

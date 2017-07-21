@@ -1,4 +1,4 @@
-@extends('voyager::master')
+@extends('master')
 
 @section('css')
     <script type="text/javascript" src="{{ voyager_asset('js/vue21.min.js') }}"></script>
@@ -16,7 +16,7 @@
 @section('content')
 
     <div class="page-content container-fluid">
-        @include('voyager::alerts')
+        @include('alerts')
         <div class="row">
             <div class="col-md-12">
 

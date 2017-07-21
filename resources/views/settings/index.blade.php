@@ -1,4 +1,4 @@
-@extends('voyager::master')
+@extends('master')
 
 @section('css')
     <style>
@@ -147,7 +147,7 @@
 @section('content')
 
     <div class="container-fluid">
-        @include('voyager::alerts')
+        @include('alerts')
         @if(config('voyager.show_dev_tips'))
         <div class="alert alert-info">
             <strong>How To Use:</strong>

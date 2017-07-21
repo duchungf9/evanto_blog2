@@ -1,4 +1,4 @@
-@extends('voyager::master')
+@extends('master')
 
 @section('page_title','All '.$dataType->display_name_plural)
 
@@ -11,12 +11,12 @@
             </a>
         @endif
     </h1>
-    @include('voyager::multilingual.language-selector')
+    @include('multilingual.language-selector')
 @stop
 
 @section('content')
     <div class="page-content container-fluid">
-        @include('voyager::alerts')
+        @include('alerts')
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-bordered">
@@ -39,7 +39,7 @@
                                             <img src="@if( strpos($data->{$row->field}, 'http://') === false && strpos($data->{$row->field}, 'https://') === false){{ Voyager::image( $data->{$row->field} ) }}@else{{ $data->{$row->field} }}@endif" style="width:100px">
                                         @else
                                             @if(is_field_translatable($data, $row))
-                                                @include('voyager::multilingual.input-hidden', [
+                                                @include('multilingual.input-hidden', [
                                                     '_field_name'  => $row->field,
                                                     '_field_trans' => get_field_translations($data, $row->field)
                                                 ])

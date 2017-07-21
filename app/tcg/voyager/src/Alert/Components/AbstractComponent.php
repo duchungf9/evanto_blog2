@@ -1,8 +1,8 @@
 <?php
 
-namespace App\TCG\Voyager\Alert\Components;
+namespace App\TCG\Voyager\Src\Alert\Components;
 
-use App\TCG\Voyager\Alert;
+use App\TCG\Voyager\Src\Alert;
 
 abstract class AbstractComponent implements ComponentInterface
 {

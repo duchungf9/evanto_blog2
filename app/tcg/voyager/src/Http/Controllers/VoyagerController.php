@@ -62,6 +62,6 @@ class VoyagerController extends Controller
 
     public function profile()
     {
-        return view('voyager::profile');
+        return view('profile');
     }
 }

@@ -1,4 +1,4 @@
-@extends('voyager::master')
+@extends('master')
 
 @section('page_header')
     <h1 class="page-title">

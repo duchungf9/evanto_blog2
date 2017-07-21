@@ -1,6 +1,6 @@
 <?php
 
-namespace App\TCG\Voyager\Alert\Components;
+namespace App\TCG\Voyager\Src\Alert\Components;
 
 interface ComponentInterface
 {

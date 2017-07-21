@@ -1,4 +1,4 @@
-@extends('voyager::master')
+@extends('master')
 
 @section('page_title','View '.$dataType->display_name_singular)
 
@@ -17,7 +17,7 @@
             Return to List
         </a>        
     </h1>
-    @include('voyager::multilingual.language-selector')
+    @include('multilingual.language-selector')
 @stop
 
 @section('content')
@@ -77,10 +77,10 @@
                                 {{ $dataTypeContent->{$row->field} }}
                                 @endif
                             @elseif($row->type == 'rich_text_box')
-                                @include('voyager::multilingual.input-hidden-bread-read')
+                                @include('multilingual.input-hidden-bread-read')
                                 <p>{{ strip_tags($dataTypeContent->{$row->field}, '<b><i><u>') }}</p>
                             @else
-                                @include('voyager::multilingual.input-hidden-bread-read')
+                                @include('multilingual.input-hidden-bread-read')
                                 <p>{{ $dataTypeContent->{$row->field} }}</p>
                             @endif
                         </div><!-- panel-body -->

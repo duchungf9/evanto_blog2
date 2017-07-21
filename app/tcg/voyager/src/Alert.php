@@ -1,8 +1,8 @@
 <?php
 
-namespace TCG\Voyager;
+namespace App\TCG\Voyager\Src;
 
-use App\TCG\Voyager\Alert\Components\ComponentInterface;
+use App\TCG\Voyager\Src\Alert\Components\ComponentInterface;
 
 class Alert
 {

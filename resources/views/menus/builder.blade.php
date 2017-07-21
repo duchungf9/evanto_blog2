@@ -1,4 +1,4 @@
-@extends('voyager::master')
+@extends('master')
 
 @section('css')
     <link rel="stylesheet" type="text/css" href="{{ voyager_asset('css/nestable.css') }}">
@@ -9,11 +9,11 @@
         <i class="voyager-list"></i>Menu Builder ({{ $menu->name }})
         <div class="btn btn-success add_item"><i class="voyager-plus"></i> New Menu Item</div>
     </h1>
-    @include('voyager::multilingual.language-selector')
+    @include('multilingual.language-selector')
 @stop
 
 @section('content')
-    @include('voyager::menus.partial.notice')
+    @include('menus.partial.notice')
 
     <div class="page-content container-fluid">
         <div class="row">
@@ -74,9 +74,9 @@
                     <input id="m_form_method" type="hidden" name="_method" value="POST">
                     {{ csrf_field() }}
                     <div class="modal-body">
-                        @include('voyager::multilingual.language-selector')
+                        @include('multilingual.language-selector')
                         <label for="name">Title of the Menu Item</label>
-                        @include('voyager::multilingual.input-hidden', ['_field_name' => 'title', '_field_trans' => ''])
+                        @include('multilingual.input-hidden', ['_field_name' => 'title', '_field_trans' => ''])
                         <input type="text" class="form-control" id="m_title" name="title" placeholder="Title"><br>
                         <label for="type">Link type</label>
                         <select id="m_link_type" class="form-control" name="type">

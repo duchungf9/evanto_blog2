@@ -6,7 +6,7 @@ use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
-use TCG\Voyager\Facades\Voyager;
+use App\TCG\Voyager\Src\Facades\Voyager;
 use App\Http\Controllers\Voyager\Controller;
 use TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 
@@ -32,7 +32,6 @@ class ProductsController extends Controller
 
         // GET THE DataType based on the slug
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
-
         // Check permission
         Voyager::canOrFail('browse_'.$dataType->name);
 
@@ -41,7 +40,6 @@ class ProductsController extends Controller
         // Next Get or Paginate the actual content from the MODEL that corresponds to the slug DataType
         if (strlen($dataType->model_name) != 0) {
             $model = app($dataType->model_name);
-
             $relationships = $this->getRelationships($dataType);
 
             if ($model->timestamps) {

@@ -1,4 +1,4 @@
-@extends('voyager::master')
+@extends('master')
 
 @if(isset($dataTypeContent->id))
     @section('page_title','Edit '.$dataType->display_name_singular)
@@ -58,7 +58,7 @@
     <h1 class="page-title">
         <i class="{{ $dataType->icon }}"></i> @if(isset($dataTypeContent->id)){{ 'Edit' }}@else{{ 'New' }}@endif {{ $dataType->display_name_singular }}
     </h1>
-    @include('voyager::multilingual.language-selector')
+    @include('multilingual.language-selector')
 @stop
 
 @section('content')
@@ -94,7 +94,7 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            @include('voyager::multilingual.input-hidden', [
+                            @include('multilingual.input-hidden', [
                                 '_field_name'  => 'title',
                                 '_field_trans' => 'title'
                             ])
@@ -110,7 +110,7 @@
                                 <a class="panel-action voyager-resize-full" data-toggle="panel-fullscreen" aria-hidden="true"></a>
                             </div>
                         </div>
-                        @include('voyager::multilingual.input-hidden', [
+                        @include('multilingual.input-hidden', [
                             '_field_name'  => 'content_introduce',
                             '_field_trans' => 'content_introduce'
                         ])
@@ -126,7 +126,7 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            @include('voyager::multilingual.input-hidden', [
+                            @include('multilingual.input-hidden', [
                                 '_field_name'  => 'description',
                                 '_field_trans' =>'description'
                             ])
@@ -147,7 +147,7 @@
 
                             <div class="form-group">
                                 <label for="name">Prize</label>
-                                @include('voyager::multilingual.input-hidden', [
+                                @include('multilingual.input-hidden', [
                                     '_field_name'  => 'cost',
                                     '_field_trans' => 'cost'
                                 ])
@@ -160,7 +160,7 @@
 
                             <div class="form-group">
                                 <label for="name">URL slug</label>
-                                @include('voyager::multilingual.input-hidden', [
+                                @include('multilingual.input-hidden', [
                                     '_field_name'  => 'slug',
                                     '_field_trans' => 'slug'
                                 ])
@@ -219,7 +219,7 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="name">Meta Description</label>
-                                @include('voyager::multilingual.input-hidden', [
+                                @include('multilingual.input-hidden', [
                                     '_field_name'  => 'meta_description',
                                     '_field_trans' => 'meta_description'
                                 ])
@@ -227,7 +227,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="name">Meta Keywords</label>
-                                @include('voyager::multilingual.input-hidden', [
+                                @include('multilingual.input-hidden', [
                                     '_field_name'  => 'meta_keywords',
                                     '_field_trans' => 'meta_keywords'
                                 ])
@@ -235,7 +235,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="name">SEO Title</label>
-                                @include('voyager::multilingual.input-hidden', [
+                                @include('multilingual.input-hidden', [
                                     '_field_name'  => 'seo_title',
                                     '_field_trans' => 'seo_title'
                                 ])

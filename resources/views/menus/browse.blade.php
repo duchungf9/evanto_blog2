@@ -1,4 +1,4 @@
-@extends('voyager::master')
+@extends('master')
 
 @section('page_header')
     <h1 class="page-title">
@@ -12,10 +12,10 @@
 @stop
 
 @section('content')
-    @include('voyager::menus.partial.notice')
+    @include('menus.partial.notice')
 
     <div class="page-content container-fluid">
-        @include('voyager::alerts')
+        @include('alerts')
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-bordered">

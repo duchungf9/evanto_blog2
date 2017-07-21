@@ -1,4 +1,4 @@
-@extends('voyager::master')
+@extends('master')
 
 @section('page_header')
     <div class="page-title">
@@ -10,7 +10,7 @@
             $table = $dataType->name;
         }
     @endphp
-    @include('voyager::multilingual.language-selector')
+    @include('multilingual.language-selector')
 @stop
 
 
@@ -46,7 +46,7 @@
                                 <div class="col-md-6 form-group">
                                     <label for="email">Display Name (Singular)</label>
                                     @if($isModelTranslatable)
-                                        @include('voyager::multilingual.input-hidden', [
+                                        @include('multilingual.input-hidden', [
                                             'isModelTranslatable' => true,
                                             '_field_name'         => 'display_name_singular',
                                             '_field_trans' => get_field_translations($dataType, 'display_name_singular')
@@ -61,7 +61,7 @@
                                 <div class="col-md-6 form-group">
                                     <label for="email">Display Name (Plural)</label>
                                     @if($isModelTranslatable)
-                                        @include('voyager::multilingual.input-hidden', [
+                                        @include('multilingual.input-hidden', [
                                             'isModelTranslatable' => true,
                                             '_field_name'         => 'display_name_plural',
                                             '_field_trans' => get_field_translations($dataType, 'display_name_plural')

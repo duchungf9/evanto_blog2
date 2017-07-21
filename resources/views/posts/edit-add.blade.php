@@ -1,4 +1,4 @@
-@extends('voyager::master')
+@extends('master')
 
 @if(isset($dataTypeContent->id))
     @section('page_title','Edit '.$dataType->display_name_singular)
@@ -58,7 +58,7 @@
     <h1 class="page-title">
         <i class="{{ $dataType->icon }}"></i> @if(isset($dataTypeContent->id)){{ 'Edit' }}@else{{ 'New' }}@endif {{ $dataType->display_name_singular }}
     </h1>
-    @include('voyager::multilingual.language-selector')
+    @include('multilingual.language-selector')
 @stop
 
 @section('content')
@@ -94,7 +94,7 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            @include('voyager::multilingual.input-hidden', [
+                            @include('multilingual.input-hidden', [
                                 '_field_name'  => 'title',
                                 '_field_trans' => get_field_translations($dataTypeContent, 'title')
                             ])
@@ -110,7 +110,7 @@
                                 <a class="panel-action voyager-resize-full" data-toggle="panel-fullscreen" aria-hidden="true"></a>
                             </div>
                         </div>
-                        @include('voyager::multilingual.input-hidden', [
+                        @include('multilingual.input-hidden', [
                             '_field_name'  => 'body',
                             '_field_trans' => get_field_translations($dataTypeContent, 'body', 'rich_text_box', true)
                         ])
@@ -126,7 +126,7 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                            @include('voyager::multilingual.input-hidden', [
+                            @include('multilingual.input-hidden', [
                                 '_field_name'  => 'excerpt',
                                 '_field_trans' => get_field_translations($dataTypeContent, 'excerpt')
                             ])
@@ -146,7 +146,7 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="name">URL slug</label>
-                                @include('voyager::multilingual.input-hidden', [
+                                @include('multilingual.input-hidden', [
                                     '_field_name'  => 'slug',
                                     '_field_trans' => get_field_translations($dataTypeContent, 'slug')
                                 ])
@@ -205,7 +205,7 @@
                         <div class="panel-body">
                             <div class="form-group">
                                 <label for="name">Meta Description</label>
-                                @include('voyager::multilingual.input-hidden', [
+                                @include('multilingual.input-hidden', [
                                     '_field_name'  => 'meta_description',
                                     '_field_trans' => get_field_translations($dataTypeContent, 'meta_description')
                                 ])
@@ -213,7 +213,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="name">Meta Keywords</label>
-                                @include('voyager::multilingual.input-hidden', [
+                                @include('multilingual.input-hidden', [
                                     '_field_name'  => 'meta_keywords',
                                     '_field_trans' => get_field_translations($dataTypeContent, 'meta_keywords')
                                 ])
@@ -221,7 +221,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="name">SEO Title</label>
-                                @include('voyager::multilingual.input-hidden', [
+                                @include('multilingual.input-hidden', [
                                     '_field_name'  => 'seo_title',
                                     '_field_trans' => get_field_translations($dataTypeContent, 'seo_title')
                                 ])
