@@ -13,7 +13,7 @@
 
 
 Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
+    require_once '../app/tcg/voyager/routes/voyager.php';
 });
 Route::group(['prefix'=>'/'],function(){
     //Route::get('/',function(){
