@@ -1,13 +1,13 @@
 <?php
 
-namespace TCG\Voyager;
+namespace App\TCG\Voyager\Src;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
-use App\TCG\Voyager\FormFields\After\HandlerInterface as AfterHandlerInterface;
+use App\TCG\Voyager\Src\FormFields\After\HandlerInterface as AfterHandlerInterface;
 use App\TCG\Voyager\FormFields\HandlerInterface;
 use App\TCG\Voyager\Src\Models\Category;
 use App\TCG\Voyager\Src\Models\DataRow;

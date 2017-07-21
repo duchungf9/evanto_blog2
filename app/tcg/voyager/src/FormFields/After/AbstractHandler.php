@@ -2,6 +2,7 @@
 
 namespace App\TCG\Voyager\FormFields\After;
 
+use App\TCG\Voyager\Src\FormFields\After\HandlerInterface;
 use App\TCG\Voyager\Src\Traits\Renderable;
 
 abstract class AbstractHandler implements HandlerInterface

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\TCG\Voyager\FormFields;
+namespace App\TCG\Voyager\Src\FormFields;
 
 use App\TCG\Voyager\Src\Traits\Renderable;
 

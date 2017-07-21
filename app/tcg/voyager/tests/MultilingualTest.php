@@ -4,7 +4,7 @@ namespace App\TCG\Voyager\Tests;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use App\TCG\Voyager\Facades\Voyager;
+use App\TCG\Voyager\Src\Facades\Voyager;
 use App\TCG\Voyager\Src\Traits\Translatable;
 use App\TCG\Voyager\Translator;
 use App\TCG\Voyager\Translator\Collection;

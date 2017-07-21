@@ -4,7 +4,7 @@ namespace App\TCG\Voyager\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\TCG\Voyager\Facades\Voyager;
+use App\TCG\Voyager\Src\Facades\Voyager;
 use App\TCG\Voyager\Http\Controllers\Traits\BreadRelationshipParser;
 
 class VoyagerBreadController extends Controller

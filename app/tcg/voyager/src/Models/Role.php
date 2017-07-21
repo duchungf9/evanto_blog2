@@ -3,7 +3,7 @@
 namespace App\TCG\Voyager\Src\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\TCG\Voyager\Facades\Voyager;
+use App\TCG\Voyager\Src\Facades\Voyager;
 
 class Role extends Model
 {

@@ -13,7 +13,7 @@ use App\TCG\Voyager\Database\Schema\Identifier;
 use App\TCG\Voyager\Database\Schema\SchemaManager;
 use App\TCG\Voyager\Database\Schema\Table;
 use App\TCG\Voyager\Database\Types\Type;
-use App\TCG\Voyager\Facades\Voyager;
+use App\TCG\Voyager\Src\Facades\Voyager;
 use App\TCG\Voyager\Src\Models\DataType;
 use App\TCG\Voyager\Src\Models\Permission;
 

@@ -3,7 +3,7 @@
 namespace App\TCG\Voyager\Widgets;
 
 use Arrilot\Widgets\AbstractWidget;
-use App\TCG\Voyager\Facades\Voyager;
+use App\TCG\Voyager\Src\Facades\Voyager;
 
 class UserDimmer extends AbstractWidget
 {

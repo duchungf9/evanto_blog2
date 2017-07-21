@@ -1,6 +1,8 @@
 <?php
 
-namespace App\TCG\Voyager\FormFields\After;
+namespace App\TCG\Voyager\Src\FormFields\After;
+
+use App\TCG\Voyager\Src\FormFields\AbstractHandler;
 
 class DescriptionHandler extends AbstractHandler
 {

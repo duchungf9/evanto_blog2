@@ -1,20 +1,21 @@
 <?php
 
-namespace App\TCG\Voyager\Http\Controllers;
+namespace App\TCG\Voyager\Src\Http\Controllers;
 
+use App\Http\Controllers\Voyager\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Intervention\Image\Constraint;
 use Intervention\Image\Facades\Image;
-use App\TCG\Voyager\Facades\Voyager;
+use App\TCG\Voyager\Src\Facades\Voyager;
 
 class VoyagerController extends Controller
 {
     public function index()
     {
-        return view('voyager::index');
+        return view('index');
     }
 
     public function logout()

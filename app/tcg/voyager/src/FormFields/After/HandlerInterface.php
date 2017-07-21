@@ -1,6 +1,6 @@
 <?php
 
-namespace App\TCG\Voyager\FormFields\After;
+namespace App\TCG\Voyager\Src\FormFields\After;
 
 interface HandlerInterface
 {

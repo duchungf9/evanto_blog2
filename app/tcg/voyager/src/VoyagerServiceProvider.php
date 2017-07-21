@@ -11,9 +11,9 @@ use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Intervention\Image\ImageServiceProvider;
-use App\TCG\Voyager\Facades\Voyager as VoyagerFacade;
+use App\TCG\Voyager\Src\Facades\Voyager as VoyagerFacade;
 use App\TCG\Voyager\FormFields\After\DescriptionHandler;
-use App\TCG\Voyager\Http\Middleware\VoyagerAdminMiddleware;
+use App\TCG\Voyager\Src\Http\Middleware\VoyagerAdminMiddleware;
 use App\TCG\Voyager\Src\Models\User;
 use App\TCG\Voyager\Translator\Collection as TranslatorCollection;
 

@@ -3,7 +3,7 @@
 namespace App\TCG\Voyager\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\TCG\Voyager\Facades\Voyager;
+use App\TCG\Voyager\Src\Facades\Voyager;
 
 class VoyagerMenuController extends Controller
 {

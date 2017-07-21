@@ -1,6 +1,6 @@
 <?php
 
-namespace App\TCG\Voyager\Facades;
+namespace App\TCG\Voyager\Src\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

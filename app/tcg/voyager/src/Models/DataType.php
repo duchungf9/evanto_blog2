@@ -5,7 +5,7 @@ namespace App\TCG\Voyager\Src\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use App\TCG\Voyager\Database\Schema\SchemaManager;
-use App\TCG\Voyager\Facades\Voyager;
+use App\TCG\Voyager\Src\Facades\Voyager;
 use App\TCG\Voyager\Src\Traits\Translatable;
 
 class DataType extends Model

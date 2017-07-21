@@ -1,6 +1,6 @@
 <?php
 
-namespace App\TCG\Voyager\Commands;
+namespace App\TCG\Voyager\Src\Commands;
 
 use Illuminate\Foundation\Console\ModelMakeCommand;
 use Symfony\Component\Console\Input\InputOption;

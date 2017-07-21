@@ -1,13 +1,13 @@
 <?php
 
-namespace App\TCG\Voyager\Commands;
+namespace App\TCG\Voyager\Src\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
 use Intervention\Image\ImageServiceProviderLaravel5;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Process\Process;
-use App\TCG\Voyager\Facades\Voyager;
+use App\TCG\Voyager\Src\Facades\Voyager;
 use App\TCG\Voyager\Src\Traits\Seedable;
 use App\TCG\Voyager\VoyagerServiceProvider;
 

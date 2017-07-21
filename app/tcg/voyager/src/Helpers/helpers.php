@@ -3,7 +3,7 @@
 if (!function_exists('setting')) {
     function setting($key, $default = null)
     {
-        return App\TCG\Voyager\Facades\Voyager::setting($key, $default);
+        return App\TCG\Voyager\Src\Facades\Voyager::setting($key, $default);
     }
 }
 

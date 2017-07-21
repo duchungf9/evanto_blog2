@@ -1,6 +1,6 @@
 <?php
 
-namespace App\TCG\Voyager\Commands;
+namespace App\TCG\Voyager\Src\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Filesystem\Filesystem;
@@ -44,7 +44,6 @@ class ControllersCommand extends Command
     public function __construct(Filesystem $filesystem)
     {
         $this->filesystem = $filesystem;
-
         parent::__construct();
     }
 
@@ -56,9 +55,8 @@ class ControllersCommand extends Command
     public function fire()
     {
         $stub = $this->getStub();
-        $files = $this->filesystem->files(base_path('vendor/tcg/voyager/src/Http/Controllers'));
-        $namespace = config('voyager.controllers.namespace', 'App\\TCG\\Voyager\\Http\\Controllers');
-
+        $files = $this->filesystem->files(base_path('app/tcg/voyager/src/Http/Controllers'));
+        $namespace = config('voyager.controllers.namespace', 'App\\TCG\\Voyager\\Src\\Http\\Controllers');
         $appNamespace = app()->getNamespace();
 
         if (!starts_with($namespace, $appNamespace)) {
@@ -111,7 +109,7 @@ class ControllersCommand extends Command
      */
     protected function generateContent($stub, $class)
     {
-        $namespace = config('voyager.controllers.namespace', 'App\\TCG\\Voyager\\Http\\Controllers');
+        $namespace = config('voyager.controllers.namespace', 'App\\TCG\\Voyager\\Src\\Http\\Controllers');
 
         $content = str_replace(
             'DummyNamespace',
@@ -121,7 +119,7 @@ class ControllersCommand extends Command
 
         $content = str_replace(
             'FullBaseDummyClass',
-            'TCG\\Voyager\\Http\\Controllers\\'.$class,
+            'App\\TCG\\Voyager\\Src\\Http\\Controllers\\'.$class,
             $content
         );
 

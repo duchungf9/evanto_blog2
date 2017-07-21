@@ -3,7 +3,7 @@
 namespace App\TCG\Voyager\Src\Traits;
 
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
-use App\TCG\Voyager\Facades\Voyager;
+use App\TCG\Voyager\Src\Facades\Voyager;
 use App\TCG\Voyager\Src\Models\Role;
 
 /**

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\TCG\Voyager\Http\Middleware;
+namespace App\TCG\Voyager\Src\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
-use App\TCG\Voyager\Facades\Voyager;
+use App\TCG\Voyager\Src\Facades\Voyager;
 
 class VoyagerAdminMiddleware
 {
