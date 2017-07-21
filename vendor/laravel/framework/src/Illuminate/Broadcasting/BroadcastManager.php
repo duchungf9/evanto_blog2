@@ -5,6 +5,7 @@ namespace Illuminate\Broadcasting;
 use Pusher;
 use Closure;
 use Illuminate\Support\Arr;
+use Psr\Log\LoggerInterface;
 use InvalidArgumentException;
 use Illuminate\Broadcasting\Broadcasters\LogBroadcaster;
 use Illuminate\Broadcasting\Broadcasters\NullBroadcaster;
@@ -112,14 +113,16 @@ class BroadcastManager implements FactoryContract
 
         $queue = null;
 
-        if (isset($event->broadcastQueue)) {
+        if (method_exists($event, 'broadcastQueue')) {
+            $queue = $event->broadcastQueue();
+        } elseif (isset($event->broadcastQueue)) {
             $queue = $event->broadcastQueue;
         } elseif (isset($event->queue)) {
             $queue = $event->queue;
         }
 
         $this->app->make('queue')->connection($connection)->pushOn(
-            $queue, BroadcastEvent::class, ['event' => serialize(clone $event)]
+            $queue, new BroadcastEvent(clone $event)
         );
     }
 
@@ -207,7 +210,8 @@ class BroadcastManager implements FactoryContract
     protected function createPusherDriver(array $config)
     {
         return new PusherBroadcaster(
-            new Pusher($config['key'], $config['secret'], $config['app_id'], Arr::get($config, 'options', []))
+            new Pusher($config['key'], $config['secret'],
+            $config['app_id'], Arr::get($config, 'options', []))
         );
     }
 
@@ -233,7 +237,7 @@ class BroadcastManager implements FactoryContract
     protected function createLogDriver(array $config)
     {
         return new LogBroadcaster(
-            $this->app->make('Psr\Log\LoggerInterface')
+            $this->app->make(LoggerInterface::class)
         );
     }
 
