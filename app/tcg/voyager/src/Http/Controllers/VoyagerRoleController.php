@@ -1,7 +1,8 @@
 <?php
 
-namespace App\TCG\Voyager\Http\Controllers;
+namespace App\TCG\Voyager\Src\Http\Controllers;
 
+use App\TCG\Voyager\Src\Http\Controllers\VoyagerBreadController;
 use Illuminate\Http\Request;
 use App\TCG\Voyager\Src\Facades\Voyager;
 

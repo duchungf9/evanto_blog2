@@ -1,7 +1,8 @@
 <?php
 
-namespace App\TCG\Voyager\Http\Controllers;
+namespace App\TCG\Voyager\Src\Http\Controllers;
 
+use App\TCG\Voyager\Http\Controllers\Controller;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -25,7 +26,7 @@ class VoyagerMediaController extends Controller
     {
         Voyager::canOrFail('browse_media');
 
-        return view('voyager::media.index');
+        return view('media.index');
     }
 
     public function files(Request $request)

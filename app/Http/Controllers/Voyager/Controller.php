@@ -44,9 +44,9 @@ abstract class Controller extends BaseController
                         ? $data->prepareTranslations($request)
                         : [];
 
+
         foreach ($rows as $row) {
             $options = json_decode($row->details);
-
             $content = $this->getContentBasedOnType($request, $slug, $row);
 
             /*

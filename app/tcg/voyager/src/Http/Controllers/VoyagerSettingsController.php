@@ -1,7 +1,8 @@
 <?php
 
-namespace App\TCG\Voyager\Http\Controllers;
+namespace App\TCG\Voyager\Src\Http\Controllers;
 
+use App\TCG\Voyager\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\TCG\Voyager\Src\Facades\Voyager;
@@ -15,7 +16,7 @@ class VoyagerSettingsController extends Controller
 
         $settings = Voyager::model('Setting')->orderBy('order', 'ASC')->get();
 
-        return view('voyager::settings.index', compact('settings'));
+        return view('settings.index', compact('settings'));
     }
 
     public function store(Request $request)

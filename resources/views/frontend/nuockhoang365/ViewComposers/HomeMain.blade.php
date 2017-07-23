@@ -3,12 +3,11 @@
     @if(isset($params['featured_posts']))
         @foreach($params['featured_posts'] as $post)
             <?php
-                $json_params = json_decode($post->json_params);
-//                dump($json_params->price);die;
-                $price = (isset($json_params->price)?$json_params->price:0);
 
-                $period = explode("/",$price);$period = isset($period[1])?$period[1]:"bình";
-                $price = explode(" ",$price); $price = isset($price[0])?$price[0]:0;
+//                dump($json_params->price);die;
+                $price = (isset($post->cost)?$post->cost:0);
+
+                $period = (isset($post->unit)?$post->unit:'bình');
             ?>
             <div class="product">
                 <div class="image" style="background-image: url({{$post->image}})">

@@ -151,7 +151,6 @@ class ProductsController extends Controller
     public function update(Request $request, $id)
     {
         $slug = $this->getSlug($request);
-
         $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
 
         // Check permission
@@ -159,7 +158,6 @@ class ProductsController extends Controller
 
         //Validate fields with ajax
         $val = $this->validateBread($request->all(), $dataType->editRows);
-
         if ($val->fails()) {
             return response()->json(['errors' => $val->messages()]);
         }
