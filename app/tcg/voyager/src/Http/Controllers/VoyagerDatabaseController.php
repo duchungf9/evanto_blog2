@@ -99,7 +99,7 @@ class VoyagerDatabaseController extends Controller
 
         $db = $this->prepareDbManager('update', $table);
 
-        return view('voyager::tools.database.edit-add', compact('db'));
+        return view('tools.database.edit-add', compact('db'));
     }
 
     /**

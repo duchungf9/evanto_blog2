@@ -8,7 +8,7 @@ class ImageHandler extends AbstractHandler
 
     public function createContent($row, $dataType, $dataTypeContent, $options)
     {
-        return view('voyager::formfields.image', [
+        return view('formfields.image', [
             'row'             => $row,
             'options'         => $options,
             'dataType'        => $dataType,
