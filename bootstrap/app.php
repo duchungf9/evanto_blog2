@@ -17,8 +17,8 @@ $_ENV['CAUHINH'] = [
         'name'=>'nuockhoang365',
         'db_user'=>'root',
         'db_name'=>'my_blog2',
-        'db_password'=>'',
-        'db_host'=>'localhost'
+        'db_password'=>'hungdaica',
+        'db_host'=>'139.59.250.144'
     ],
     [
         'domain'=>'evanto.com.vn',
