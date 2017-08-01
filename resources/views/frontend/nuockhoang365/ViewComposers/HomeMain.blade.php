@@ -3,7 +3,6 @@
     @if(isset($params['featured_posts']))
         @foreach($params['featured_posts'] as $post)
             <?php
-
 //                dump($json_params->price);die;
                 $price = (isset($post->cost)?$post->cost:0);
 
@@ -30,7 +29,6 @@
             <div class="show-equiment">
                 @if(isset($cat->products))
                     @foreach($cat->products as $post)
-
                         <div class="product">
                             <div class="image" style="background-image: url({{URL::to('/storage').'/'.$post->image}})">
                                 <img src="{{URL::to('/storage').'/'.$post->image}}" alt="{{$post->title}}" width="488" height="488">

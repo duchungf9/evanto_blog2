@@ -12,6 +12,12 @@ class Product extends Model
     //
     const PUBLISHED = 'PUBLISHED';
 
+    public function __construct(array $attributes = [])
+    {
+        parent::__construct($attributes);
+        $this->setTable('Products');
+    }
+
     protected $guarded = [];
 
     public function save(array $options = [])

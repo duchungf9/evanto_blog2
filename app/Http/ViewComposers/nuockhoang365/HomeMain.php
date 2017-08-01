@@ -24,12 +24,14 @@ class HomeMain
      */
     public function compose(View $view)
     {
+
         $categorySLug = null;
         if(isset($_SERVER['REDIRECT_URL']) or isset($_SERVER['REQUEST_URI'])){
             $href = (isset($_SERVER['REDIRECT_URL']))?$_SERVER['REDIRECT_URL']:$_SERVER['REQUEST_URI'];
             $categorySLug = str_replace("/","",$href);
             $categorySLug = str_replace("/","",$href);
             $category = Category::where('slug',$categorySLug)->first();
+
         }
         if(!isset($category)){
             $params = [];
@@ -47,6 +49,7 @@ class HomeMain
                                             ->get();
             $params['category'] = $category;
             $catPhukien = Category::where('slug','phu-kien')->first();
+
             if($catPhukien==null){
                 $catPhukien = new Category();
                 $catPhukien->name = "Phụ Kiện";
@@ -54,8 +57,10 @@ class HomeMain
                 $catPhukien->description = "Phụ Kiện";
                 $catPhukien->save();
             }
+
             $catPhukien->products = Post::where('category_id',$catPhukien->id)->where('status','publish')->orderBy('id','ASC')->get();
             $params['phu-kien'] = $catPhukien;
+
             $view->with('params', $params);
         }
 

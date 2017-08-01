@@ -158,4 +158,8 @@ class HomeController extends Controller
     private function loginUser($o_user){
         Auth::login($o_user);
     }
+
+    public function dmm(){
+
+    }
 }
